@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+    <header id="headbar">
+</header>
+    <div style="margin-left:30px">
+        <form method="POST" action="/login"><br>
+            <input type="email" name="login_email" placeholder="Email"><br><br>
+            <input type="password" name="login_pass" placeholder="Password"><br><br>
+            <button type="submit">Login</button>
+            
+        </form>
+        <a href="{{url_for('register')}}"><button>Register</button></a>
+    </div>
+</body>
+</html>

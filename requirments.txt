@@ -1,0 +1,18 @@
+pages:
+1) Add inventory
+2) inventory page
+
+
+
+Page 1): It will allow the user to add inventory of car spare parts in our MySQL Database
+Page 2): It will show all the inventory record on page. Fetch data from MySQL Table
+
+Page 2): Later on reporting and graphs will also be added in page 2
+
+ETL processes will be done using python
+
+27/12/25 10:10pm
+
+add inventory page will open first
+naext page for record
+button to open records on add inventory page

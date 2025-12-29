@@ -1,0 +1,37 @@
+*{
+    background-color: rgb(241, 252, 204);
+    margin: 0px;
+    color:black;
+}
+
+/* page one styling */
+
+#headbar{
+    height: 65px;
+    width: 100%;
+    background-color: black;
+}
+
+td:hover{
+    background-color: rgb(144, 219, 219);
+
+}
+.addform{
+    background-color: aqua;
+    width: 200px;
+    height: 300px;
+    border: solid 1px;
+    margin: 20px;
+    color:beige;
+}
+
+button:hover{
+    background-color: rgb(223, 255, 134);
+}
+
+button{
+    border-radius: 100px;
+    width:90px;
+    background-color: none;
+    margin:0;
+}

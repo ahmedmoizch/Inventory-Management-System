@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Inventory</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header id="headbar">
+    </header>
+    <div>
+        <form method="POST" action="/" style="margin-bottom: 30px;">
+            <br><br>
+            <input type="number" name="item_id" placeholder="Enter ID"><br><br>
+            <input type="text" name="item_name" placeholder="Enter Item Name"><br><br>
+            <input type="number" name="item_price"placeholder="Enter Price"><br><br>
+            <input type="number" name="item_wp" placeholder="Enter Wholesale Price"><br><br>
+            <button type="submit">Submit Here</button>
+            
+            <a href="{{ url_for('record') }}" >
+            <button type="button">View Record</button></a>
+        </form>
+    </div>
+
+
+</body>
+</html>

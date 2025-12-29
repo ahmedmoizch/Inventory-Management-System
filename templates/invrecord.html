@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Record</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header id="headbar">
+</header>
+
+<div style="padding: 20px;">
+    <h2>Inventory</h2>
+    
+    <a href="{{ url_for('add') }}" style="background-color: aqua;"><button id="addinventory" type="button">Add Record</button></a>
+
+    {% if data %}
+    <table id="tbl" border="1px" style="border-collapse: collapse; width: 100%;">
+        <thead>
+                <tr style="background-color: #f2f2f2;">
+        {% for column in columns %}
+        <th style="padding: 10px; text-align: left;">{{column}}</th>
+        {% endfor %}
+        <th style="padding: 10px; text-align: left;">Profit</th>
+        </tr>
+    </thead>
+    <thebody>
+        {% for row in data %}
+        <tr>
+            {% for item in row %}
+            <td style="padding: 8px;">{{item}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        
+    </thebody>
+    {% else %}
+        <p>No data found in the table.</p>
+        {% endif %}
+    </table>
+</div>
+    
+</body>
+</html>
