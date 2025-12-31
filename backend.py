@@ -50,6 +50,10 @@ def register():
 
 @app.route ("/", methods=["GET", "POST"])
 def add():
+
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+
     if request.method == "POST":
         item_id = request.form.get('item_id')
         item_name = request.form.get('item_name')
@@ -81,6 +85,7 @@ def add():
 
 @app.route("/add", methods=['GET', 'POST'])
 def record():
+
     connection = mysql.connector.connect(**db_config)
     cursor = connection.cursor()
 
@@ -91,13 +96,13 @@ def record():
     qurey = "select * from products"
     # Column Names
     column_names = [desc[0] for desc in cursor.description]
+    
 
     #df = pd.read_sql_query(qurey, connection)
     #profit = df['Profit'] = df['price'] - df['wholesale_price']
     # Close Connection
     cursor.close()
     connection.close()
-
     #print(df)
 
     return render_template("invrecord.html", data=data, columns=column_names)
@@ -122,6 +127,10 @@ def login():
 
         if is_valid == 1:
             print("Login Sucessfull")
+
+            session['user_email'] = login_email
+            session['logged_in'] = True
+
             return(redirect(url_for('add')))
         
         else:
@@ -129,6 +138,11 @@ def login():
             return redirect(url_for('login'))
 
     return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('home'))
 
 
 if __name__ =="__main__":
