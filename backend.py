@@ -34,6 +34,7 @@ def register():
                 cursor.execute("insert into login values (%s, %s)", (r_email, r_pass))
                 connection.commit()
                 print("Data Saved Sucessfully")
+                print("Whats Next")
 
             except:
                 print(f"Error saving to database: {r_email}")
